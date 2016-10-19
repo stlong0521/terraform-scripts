@@ -20,6 +20,15 @@ resource "aws_iam_user_policy" "chat_bot_app_policy" {
         "arn:aws:s3:::ts-chat-bot",
         "arn:aws:s3:::ts-chat-bot/*"
       ]
+    },
+    {
+      "Action": [
+        "dynamodb:Get*",
+        "dynamodb:List*",
+        "dynamodb:Put*"
+      ],
+      "Effect": "Allow",
+      "Resource": "${aws_dynamodb_table.brain_version.arn}"
     }
   ]
 }
