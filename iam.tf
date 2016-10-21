@@ -13,7 +13,8 @@ resource "aws_iam_user_policy" "chat_bot_app_policy" {
       "Action": [
         "s3:Get*",
         "s3:List*",
-        "s3:Put*"
+        "s3:Put*",
+        "s3:Delete*"
       ],
       "Effect": "Allow",
       "Resource": [
